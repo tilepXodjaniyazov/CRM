@@ -1,5 +1,6 @@
 package com.example.crm;
 
+import com.example.crm.Entity.Weekday;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

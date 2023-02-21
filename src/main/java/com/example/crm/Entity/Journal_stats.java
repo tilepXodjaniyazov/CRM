@@ -1,21 +1,24 @@
 package com.example.crm.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Subject {
+public class Journal_stats {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
-    private String description;
+    @OneToOne
+    private Journal journal;
+    @OneToMany
+    private List<Student> student;
+    private Integer mark;
+    private Boolean attended;
 }
